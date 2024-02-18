@@ -5,12 +5,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.ranjan.springboot.learnjpaandhibernate.course.Course;
+import com.ranjan.springboot.learnjpaandhibernate.course.jpa.CourseJpaRepository;
 
 @Component
-public class CourseJdbcCommandLineRunner implements CommandLineRunner {
+public class CourseJpaCommandLineRunner implements CommandLineRunner {
+	
+//	@Autowired
+//	private CourseJdbcRepository courseJdbcRepository;
 	
 	@Autowired
-	private CourseJdbcRepository courseJdbcRepository;
+	private CourseJpaRepository courseJpaRepository;
 
 	/*
 	@Override
@@ -20,6 +24,7 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 	}
 	*/
 	
+	/*
 	@Override
 	public void run(String... args) throws Exception {
 		courseJdbcRepository.insert(new Course(1, "Learn JPA", "Ravi Ranjan"));
@@ -29,6 +34,18 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
 		courseJdbcRepository.deleteById(2);
 		
 		System.out.println(courseJdbcRepository.findById(1));
+
+	}
+	*/
+	@Override
+	public void run(String... args) throws Exception {
+		courseJpaRepository.insert(new Course(1, "Learn JPA", "Ravi Ranjan"));
+		courseJpaRepository.insert(new Course(2, "Learn Hibernate", "Ravi Ranjan"));
+		courseJpaRepository.insert(new Course(3, "Learn JPA and Hibernate", "Ravi Ranjan"));
+		
+		courseJpaRepository.deleteById(2);
+		
+		System.out.println(courseJpaRepository.findById(1));
 
 	}
 
