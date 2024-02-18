@@ -144,3 +144,32 @@ Inserting and Deleting Data using Spring JDBC (Fourth commit)
 
 9. Conclude by showcasing the updated H2 database with the latest data, including the inserted courses and the successful deletion of a course.
 
+----------------------------------------------
+Querying Data using Spring JDBC (Fifth commit)
+----------------------------------------------
+As we move towards the final phase of our work with Spring JDBC, our primary goal is to extract data from the database, specifically utilizing a select query implemented in the CourseJdbcRepository.
+
+To cater to the requirement for a precise select query based on an ID:
+
+```sql
+SELECT * FROM course WHERE id = ?
+```
+
+Going forward, a new method is introduced in the CourseJdbcRepository class to execute this select query by ID:
+
+```java
+public Course findById(long id) {
+    // Utilizing queryForObject to execute the select query and expecting a single result
+    return jdbcTemplate.queryForObject(
+        "SELECT * FROM course WHERE id = ?",
+        new BeanPropertyRowMapper<>(Course.class),
+        id
+    );
+}
+```
+
+The significance of `BeanPropertyRowMapper` is highlighted in efficiently linking the result set from the database to the corresponding `Course` bean. This linkage is possible due to the exact match between column names in the table and those in the bean.
+
+Acknowledging the importance of setters, it's noted that initially, only getters existed in the `Course` class. To rectify this, setters are generated using the IDE.
+
+Following this, the process of testing the `findById` method in the command line runner is explained. Initially encountering empty printed values, the issue is identified as the absence of setters in the `Course` class. After generating setters and restarting the application, the course beans are successfully printed with all values populated.
