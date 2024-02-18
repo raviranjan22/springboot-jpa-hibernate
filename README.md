@@ -121,3 +121,26 @@ Now introduce a method named "insert" in the CourseJdbcRepository class, where w
 We will also introduce the concept of a Command Line Runner in Spring Boot, specifically the CommandLineRunner interface, which allows the execution of custom logic at the startup of the application. We will then create a new class called "CourseJdbcCommandLineRunner" that implements CommandLineRunner, and demonstrate how to use it to execute the insert query at the application startup by autowiring the CourseJdbcRepository and calling the insert method.
 
 Finally, we will check the database to verify that the data has been successfully inserted.
+
+------------------------------------------------------------
+Inserting and Deleting Data using Spring JDBC (Fourth commit)
+------------------------------------------------------------
+
+1. Begin by emphasizing the simplicity of executing queries using Spring JDBC compared to traditional JDBC. Highlight the ease of code in Spring JDBC.
+
+2. In order to insert details of a specific course, use a control/command to create a new class named "Course" in the "course" package under a specified package structure.
+
+3. Design the "Course" class with private fields (ID, name, author) and corresponding methods (constructor, getters, and toString).
+
+4. Pass the course details to the CourseJdbcRepository for insertion. Ensure that the insert query is dynamic, with placeholders replaced by actual values from the Course class.
+
+5. Demonstrate the insertion process using a new course instance. Explain the use of double quotes for string values in Java code.
+
+6. Implement a method for deleting a specific course by its ID. Modify the query accordingly.
+
+7. Utilize a command line runner to execute the delete operation on a specific course ID.
+
+8. If an error is identified in the delete operation (e.g., using the wrong query), correct it and restart the application.
+
+9. Conclude by showcasing the updated H2 database with the latest data, including the inserted courses and the successful deletion of a course.
+
