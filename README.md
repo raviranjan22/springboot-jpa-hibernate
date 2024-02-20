@@ -220,3 +220,15 @@ The conversation then introduces Spring Data JPA, which strives to further strea
 The Spring Data JPA repository offers a range of methods such as save, delete, find by ID, simplifying various database operations. The transition from using a JDBC repository to the new Spring Data JPA repository is demonstrated in a course command line runner class, illustrating the ease of adoption.
 
 Advantages of Spring Data JPA include a significant reduction in code, where developers only need to create an interface. The inherent functionality of Spring Data JPA automates numerous database operations, enhancing the accessibility and convenience of JPA for developers. This concludes by highlighting the journey from Spring JDBC to JPA and ultimately to Spring Data JPA, underscoring the achieved simplicity with Spring Data JPA.
+
+----------------------------------------------------
+Exploring features of Spring Data JPA (Eight commit)
+----------------------------------------------------
+
+The discussion revolves around the utilization of Spring Data JPA within a Java application. The initial focus lies on understanding Spring JDBC, JPA, and subsequently, Spring Data JPA. The narrative then transitions to the command line runner, showcasing practical implementation of Spring Data JPA repository methods.
+
+The usage of `repository.findAll()` is illustrated to retrieve and print all courses through `System.out.println`. The significance of `repository.count()` is underscored for entity counting. An integral feature of Spring Data JPA Repositories, permitting the incorporation of custom methods, is introduced.
+
+A specific custom method, `findByAuthor`, is exemplified, adhering to a prescribed naming convention. The application of this custom method for author-based course searches is demonstrated. The discussion extends the concept of naming conventions and custom methods to include searching by course name, employing `findByName`.
+
+The execution of the application is detailed, presenting the query results and showcasing the operational aspects of the implemented methods. The journey spanning from Spring JDBC to JPA to Spring Data JPA is succinctly summarized, emphasizing the advantages and adaptability offered by Spring Data JPA in database operations.
