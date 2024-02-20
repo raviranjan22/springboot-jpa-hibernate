@@ -63,7 +63,10 @@ public class CourseJpaCommandLineRunner implements CommandLineRunner {
 		
 		courseSpringDataJpaRepository.deleteById(2l);
 		
+		courseSpringDataJpaRepository.findByAuthor("Ravi Ranjan");
+		
 		System.out.println(courseSpringDataJpaRepository.findById(1l));
+		System.out.println(courseSpringDataJpaRepository.findAll());
 
 	}
 
