@@ -232,3 +232,26 @@ The usage of `repository.findAll()` is illustrated to retrieve and print all cou
 A specific custom method, `findByAuthor`, is exemplified, adhering to a prescribed naming convention. The application of this custom method for author-based course searches is demonstrated. The discussion extends the concept of naming conventions and custom methods to include searching by course name, employing `findByName`.
 
 The execution of the application is detailed, presenting the query results and showcasing the operational aspects of the implemented methods. The journey spanning from Spring JDBC to JPA to Spring Data JPA is succinctly summarized, emphasizing the advantages and adaptability offered by Spring Data JPA in database operations.
+
+---------------------------------
+- **Hibernate versus JPA:**
+  - **JPA (Java Persistence API):**
+    - JPA is an API (Java Persistence API) that defines a specification.
+    - It acts like an interface and defines how to define entities using annotations.
+    - Examples include `@Entity` for entities and `@Id` for primary keys.
+    - It allows mapping of attributes using annotations like `@Column`.
+    - Provides methods for entity management through the entity manager.
+  - **Hibernate:**
+    - Hibernate is a popular implementation of JPA.
+    - It is one of the implementations that follow the JPA specification.
+    - In code, you can use Hibernate directly by using Hibernate annotations, but it's not recommended.
+    - Recommended approach: Use JPA in code and have Hibernate as the implementation by adding Hibernate JAR to the classpath.
+    - This allows flexibility to switch to other JPA implementations, like Toplink, without being locked into Hibernate.
+  - **Dependency Management:**
+    - Both Hibernate and JPA dependencies are included through `springboot-starter-data-jpa` in the `pom.xml`.
+    - JPA is used in the code with annotations, and Hibernate is used as its implementation.
+
+**Key Takeaway:**
+- **JPA is an API** that defines how to map entities, attributes, and use the entity manager.
+- **Hibernate is an implementation** of the JPA specification.
+- **Recommended practice** is to use JPA annotations in code to avoid being locked into a specific implementation, but Hibernate is often used as the underlying provider.
